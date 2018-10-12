@@ -88,11 +88,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-<<<<<<< HEAD
       msg: '欢迎你，第一次构建Vue项目'
-=======
-      msg: 'Hellow world'
->>>>>>> 76583f4c912ac5c483e0ca0992597da647c86edd
     }
   }
 }
