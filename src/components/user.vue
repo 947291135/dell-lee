@@ -1,6 +1,7 @@
 <template>
     <div>
-        <i style="color:#fff">this is uesr</i>
+        <i>this is uesr</i>
+        <h2>hello world</h2>
     </div>
 </template>
 
