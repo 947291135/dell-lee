@@ -24,7 +24,7 @@ export default {
   .header{
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
     background: rgba(255, 255, 255, .8);
   }
   .header:after{
