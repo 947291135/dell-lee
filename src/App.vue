@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <list></list>
     <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
-import list from '@/components/list.vue'
 export default {
-  name: 'App',
-  components: { list }
+  name: 'App'
 }
 </script>
 
 <style>
   body{
     background:#ffffff;
+  }
+  a{
+    text-decoration: none
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -26,6 +26,6 @@ export default {
   color: #2c3e50;
 }
 #app > img{
-  margin-top: 110px;
+  margin-top: 20px;
 }
 </style>
