@@ -10,6 +10,7 @@ import fastClick from 'fastclick'
 import './assets/css/reset.css'
 // 1px处理解决方案CSS
 import './assets/css/border.css'
+import './assets/css/iconfont.css'
 // rem适配，暂时不用
 // import './assets/js/rem.js'
 
@@ -21,17 +22,17 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>',
-  created () {
-    // 测试：当为手机端路由到手机端页面，如果为PC端则正常跳转
-    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-      this.$router.push({
-        path: '/iphone'
-      })
-    } else {
-      this.$router.push({
-        path: '/'
-      })
-    }
-  }
+  template: '<App/>'
+  // created () {
+  //   // 测试：当为手机端路由到手机端页面，如果为PC端则正常跳转
+  //   if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+  //     this.$router.push({
+  //       path: '/iphone'
+  //     })
+  //   } else {
+  //     this.$router.push({
+  //       path: '/'
+  //     })
+  //   }
+  // }
 })
