@@ -3,10 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// fastclick解决点击事件500毫秒延迟的问题
+// 将fastclick引入到项目中
+import fastClick from 'fastclick'
+// 基础CSS样式
+import './assets/css/reset.css'
+// 1px处理解决方案CSS
+import './assets/css/border.css'
 // rem适配，暂时不用
 // import './assets/js/rem.js'
 
 Vue.config.productionTip = false
+fastClick.attach(document.body)
 
 /* eslint-disable no-new */
 new Vue({
