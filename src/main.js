@@ -7,10 +7,10 @@ import router from './router'
 // 将fastclick引入到项目中
 import fastClick from 'fastclick'
 // 基础CSS样式
-import './assets/css/reset.css'
+import 'css/reset.css'
 // 1px处理解决方案CSS
-import './assets/css/border.css'
-import './assets/css/iconfont.css'
+import 'css/border.css'
+import 'css/iconfont.css'
 // rem适配，暂时不用
 // import './assets/js/rem.js'
 
