@@ -15,6 +15,8 @@ import 'css/iconfont.css'
 // import './assets/js/rem.js'
 
 Vue.config.productionTip = false
+
+//注册fastClick插件
 fastClick.attach(document.body)
 
 /* eslint-disable no-new */
