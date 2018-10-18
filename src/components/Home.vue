@@ -3,7 +3,6 @@
     <Homeheader></Homeheader>
     <HomeSwiper></HomeSwiper>
     <HomeIcons></HomeIcons>
-    <img src="@/assets/img/icons_01.png" alt="" srcset="">
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-    <div class="icons">
-        <swiper>
+    <div class="icons border-bottom">
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,i) of pages" :key="i">
                 <div class="icon" v-for="item of page" :key="item.index">
                     <div class="icon-img">
@@ -9,6 +9,7 @@
                     <p class="icon-desc">{{item.title}}</p>
                 </div>
             </swiper-slide>
+            <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
     </div>
 </template>
@@ -64,7 +65,11 @@ export default {
                   title:'一日游',
                   src:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
               }
-          ]
+          ],
+          swiperOption:{
+              autoplay:0,
+              pagination: '.swiper-pagination',
+          }
       }
   },
   computed: {
@@ -90,11 +95,11 @@ padding 的值为百分比是父级元素宽的百分比。
 <style lang="stylus" scoped>
 .icons >>> .swiper-container
     height: 0
-    padding-bottom: 50%
+    padding-bottom: 55%
 .icons
     overflow: hidden
     height: 0
-    padding-bottom: 50%
+    padding-bottom: 55%
     .icon
         position relative
         overflow hidden
