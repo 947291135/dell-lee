@@ -63,7 +63,7 @@ export default {
     float right 
     text-align center 
     .arrow-icon
-      font-size .24rm
+      font-size .24rem
       margin-left .05rem
     
 </style>

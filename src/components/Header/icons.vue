@@ -96,10 +96,16 @@ padding 的值为百分比是父级元素宽的百分比。
 .icons >>> .swiper-container
     height: 0
     padding-bottom: 55%
+.icons >>> .swiper-pagination-bullet-active
+    background rgba(0,175,190,.8);
+.icons >>> .swiper-pagination-bullet
+    width 6px
+    height 6px
 .icons
     overflow: hidden
     height: 0
     padding-bottom: 55%
+    background #fff
     .icon
         position relative
         overflow hidden
