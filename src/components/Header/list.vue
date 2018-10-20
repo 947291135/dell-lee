@@ -4,7 +4,118 @@
             <span class="list_logo"><img src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">本周热门</span>
             <span class="list_go">全部榜单></span>
         </div>
-        <div class="list_bottom"></div>
+        <div class="list_bottom">
+            <ul class="list_ul">
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+                <li class="mp-hotsale-item">
+                    <a class="mp-fulllink">
+                        <div class="mp-hotsale-imgcon">
+                            <img src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_150x150_79b84422.jpg" alt="">
+                        </div>
+                        <div class="mp-hotsale-sight">世界之窗</div>
+                        <div class="mp-hotsale-price">
+                            <span class="mpg-price">￥<em class="mpg-price-num">49.9</em></span>
+                            起
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -14,9 +125,13 @@ export default {
     data() {
         return {
             swiperOption: {
-                slidesPerView: 3,
+                slidesPerView: 3.5,
                 spaceBetween: 30,
                 freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
             }
         }
     }
@@ -55,5 +170,49 @@ export default {
             color: #616161;
             font-size: .24rem;
             line-height: .28rem;
+    .list_bottom
+        display block
+        .list_ul
+            height 3.47rem
+            padding 0 .24rem
+            width auto
+            display block
+            overflow-x: scroll;
+            white-space: nowrap;
+            .mp-hotsale-item
+                display: inline-block;
+                padding: .06rem 0 .2rem;
+                width: 2rem;
+                position relative
+                text-align center
+                .mp-fulllink
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    .mp-hotsale-imgcon
+                        overflow: hidden;
+                        width: 2rem;
+                        height: 0;
+                        padding-bottom: 100%;
+                        img
+                            width: 100%;
+                    .mp-hotsale-sight
+                        margin-top: .12rem;
+                        color: #212121;
+                        font-size: .24rem;
+                        line-height: .32rem;
+                        text-align: center;
+                        text-overflow ellipsis
+                    .mp-hotsale-price
+                        color: #616161;
+                        font-size: .24rem;
+                        line-height: .36rem;
+                        text-align: center;
+                        .mpg-price
+                            color #ff8300
+                            .mpg-price-num
+                                font-size: .28rem;
+
+
 </style>
 
