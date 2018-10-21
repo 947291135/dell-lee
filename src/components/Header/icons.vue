@@ -93,11 +93,12 @@ export default {
 padding 的值为百分比是父级元素宽的百分比。
 -->
 <style lang="stylus" scoped>
+@import '~css/varibles.styl'
 .icons >>> .swiper-container
     height: 0
     padding-bottom: 55%
 .icons >>> .swiper-pagination-bullet-active
-    background rgba(0,175,190,.8);
+    background $bgColor
 .icons >>> .swiper-pagination-bullet
     width 6px
     height 6px
