@@ -143,11 +143,12 @@ export default {
     .list_bottom
         display block
         .list_ul
-            height 3.47rem
+            height 3.17rem
             padding 0 .24rem
             width auto
             display block
             overflow-x: scroll;
+            overflow-y: hidden;
             white-space: nowrap;
             .mp-hotsale-item
                 display: inline-block;
