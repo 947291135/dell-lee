@@ -107,6 +107,7 @@ padding 的值为百分比是父级元素宽的百分比。
     height: 0
     padding-bottom: 55%
     background #fff
+    padding-top .1rem
     .icon
         position relative
         overflow hidden

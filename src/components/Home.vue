@@ -6,6 +6,8 @@
     <HomeGPS></HomeGPS>
     <HomeADV></HomeADV>
     <HomeList></HomeList>
+    <HomeRecommend></HomeRecommend>
+    <HomeWeekend></HomeWeekend>
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import HomeIcons from './Header/icons.vue'
 import HomeGPS from './Header/GPS.vue'
 import HomeADV from './Header/ADV.vue'
 import HomeList from './Header/list.vue'
+import HomeRecommend from './content/Recommend.vue'
+import HomeWeekend from './content/Weekend.vue'
 export default {
   name: 'Home',
   components: {
@@ -24,7 +28,9 @@ export default {
     HomeIcons,
     HomeGPS,
     HomeADV,
-    HomeList
+    HomeList,
+    HomeRecommend,
+    HomeWeekend
   }
 }
 </script>
