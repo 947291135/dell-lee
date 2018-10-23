@@ -23,47 +23,47 @@ export default {
               {
                   index:0,
                   title:'景点门票',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'
+                  src:'/static/img/icons_01.png'
               },
               {
                   index:1,
                   title:'万圣狂欢',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/12/216ce2e78b5f5f02.png'
+                  src:'/static/img/icons_02.png'
               },
               {
                   index:2,
                   title:'游乐场',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png'
+                  src:'/static/img/icons_03.png'
               },
               {
                   index:3,
                   title:'海洋馆',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png'
+                  src:'/static/img/icons_04.png'
               },
               {
                   index:4,
                   title:'动植物园',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'
+                  src:'/static/img/icons_05.png'
               },
               {
                   index:5,
                   title:'玩转长隆',
-                  src:'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png'
+                  src:'/static/img/icons_06.png'
               },
               {
                   index:6,
                   title:'打卡圣地',
-                  src:'https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png'
+                  src:'/static/img/icons_07.png'
               },
               {
                   index:7,
                   title:'一日游',
-                  src:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
+                  src:'/static/img/icons_08.png'
               },
               {
                   index:8,
                   title:'一日游',
-                  src:'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
+                  src:'/static/img/icons_08.png'
               }
           ],
           swiperOption:{
