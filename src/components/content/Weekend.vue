@@ -4,7 +4,7 @@
             <span class="title-text">周末去那</span>
         </div>
         <ul>
-            <li class="item border-bottom" v-for="data of list" :key="data.id">
+            <li class="item border-bottom" v-for="data of WeekList" :key="data.id" v-if="WeekList.length">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="data.imgsrc" :alt="data.title"/>
                 </div>
@@ -20,29 +20,8 @@
 <script>
 export default {
     name:'HomeWeekend',
-    data () {
-        return {
-            list:[
-                {
-                    id:0,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/source/1505/fa/ca65fde9677de2.jpg_r_640x214_4500e3ff.jpg'
-                },
-                {
-                    id:1,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/source/1505/fa/ca65fde9677de2.jpg_r_640x214_4500e3ff.jpg'
-                },
-                {
-                    id:2,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/source/1505/fa/ca65fde9677de2.jpg_r_640x214_4500e3ff.jpg'
-                }
-            ]
-        }
+    props: {
+        WeekList: Array
     }
 }
 </script>

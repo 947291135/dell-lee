@@ -4,14 +4,17 @@
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>123</div>
-    <div class="header-right">城市<span class="iconfont arrow-icon">&#xe64a;</span></div>
+    <div class="header-right">{{this.city}}<span class="iconfont arrow-icon">&#xe64a;</span></div>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Homeheader'
+  name: 'Homeheader',
+  props: {
+    "city":String
+  }
 }
 </script>
 <!-- 样式使用stylus，必须增加lang="stylus" -->

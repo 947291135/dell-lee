@@ -17,55 +17,11 @@
 <script>
 export default {
   name: "icons",
+  props: {
+      iconList: Array
+  },
   data() {
       return {
-          listdata:[
-              {
-                  index:0,
-                  title:'景点门票',
-                  src:'/static/img/icons_01.png'
-              },
-              {
-                  index:1,
-                  title:'万圣狂欢',
-                  src:'/static/img/icons_02.png'
-              },
-              {
-                  index:2,
-                  title:'游乐场',
-                  src:'/static/img/icons_03.png'
-              },
-              {
-                  index:3,
-                  title:'海洋馆',
-                  src:'/static/img/icons_04.png'
-              },
-              {
-                  index:4,
-                  title:'动植物园',
-                  src:'/static/img/icons_05.png'
-              },
-              {
-                  index:5,
-                  title:'玩转长隆',
-                  src:'/static/img/icons_06.png'
-              },
-              {
-                  index:6,
-                  title:'打卡圣地',
-                  src:'/static/img/icons_07.png'
-              },
-              {
-                  index:7,
-                  title:'一日游',
-                  src:'/static/img/icons_08.png'
-              },
-              {
-                  index:8,
-                  title:'一日游',
-                  src:'/static/img/icons_08.png'
-              }
-          ],
           swiperOption:{
               autoplay:0,
               pagination: '.swiper-pagination',
@@ -76,7 +32,7 @@ export default {
     // 计算图标个数，分配页数
       pages:function(){
           var pages =[];
-          this.listdata.forEach((item,index) => {
+          this.iconList.forEach((item,index) => {
               var page=Math.floor(index / 8);
               if (!pages[page]) {
                   pages[page]=[];

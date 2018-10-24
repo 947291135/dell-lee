@@ -5,7 +5,7 @@
             <span class="title-text">热销推荐</span>
         </div>
         <ul>
-            <li class="item border-bottom" v-for="data of list" :key="data.id">
+            <li class="item border-bottom" v-for="data of RecomList" :key="data.id" v-if="RecomList.length">
                 <img class="item-img" :src="data.imgsrc" alt=""/>
                 <div class="item-info">
                     <p class="item-title">{{data.title}}</p>
@@ -20,30 +20,9 @@
 <script>
 export default {
     name:'HomeRecommend',
-    data () {
-        return {
-            list:[
-                {
-                    id:0,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_200x200_65b5a07f.jpg'
-                },
-                {
-                    id:1,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_200x200_65b5a07f.jpg'
-                },
-                {
-                    id:2,
-                    title:"世界之窗",
-                    imginfor:'深圳世界之窗成人票(夜场)(万圣节特惠10.12-10.26【不限人群】)',
-                    imgsrc:'http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_200x200_65b5a07f.jpg'
-                }
-            ]
-        }
-    }
+    props: {
+        RecomList: Array
+    },
 }
 </script>
 

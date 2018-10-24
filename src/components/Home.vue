@@ -1,13 +1,13 @@
 <template>
   <div class="main">
-    <Homeheader></Homeheader>
-    <HomeSwiper></HomeSwiper>
-    <HomeIcons></HomeIcons>
+    <Homeheader :city="city"></Homeheader>
+    <HomeSwiper :SwiperList="SwiperList"></HomeSwiper>
+    <HomeIcons :iconList="iconList"></HomeIcons>
     <HomeGPS></HomeGPS>
     <HomeADV></HomeADV>
-    <HomeList></HomeList>
-    <HomeRecommend></HomeRecommend>
-    <HomeWeekend></HomeWeekend>
+    <HomeList :rmList="rmList"></HomeList>
+    <HomeRecommend :RecomList="RecomList"></HomeRecommend>
+    <HomeWeekend :WeekList="WeekList"></HomeWeekend>
   </div>
 </template>
 
@@ -23,6 +23,16 @@ import HomeWeekend from './content/Weekend.vue'
 import axios from 'axios'
 export default {
   name: 'Home',
+  data () {
+    return {
+      city:"",
+      SwiperList:[],
+      iconList:[],
+      rmList:[],
+      RecomList:[],
+      WeekList:[]
+    }
+  },
   components: {
     Homeheader,
     HomeSwiper,
@@ -40,6 +50,7 @@ export default {
   },
   methods: {
     getHomeinfo () {
+      var _this=this;
       //只有static目录才能进行访问静态资源，其他目录访问会直接跳转回主页
       // axios.get('/static/json/index.json').then(function(response){
       //   console.log(response.data);
@@ -48,7 +59,18 @@ export default {
       // 这样大批量的修改会有风险，可以利用webpack的转发配置将请求转发到配置路径下。
       // 在config目录下的index.js文件下，有个proxyTable的属性进行配置
       axios.get('/api/index.json').then(function(response){
-        console.log(response.data);
+        var listdata = response.data;
+        if(response.data && listdata.ret){
+          _this.city = listdata.data.city;
+          _this.SwiperList = listdata.data.SwiperList;
+          _this.iconList = listdata.data.iconList;
+          _this.rmList = listdata.data.rmList;
+          _this.RecomList = listdata.data.RecomList;
+          _this.WeekList = listdata.data.WeekList;
+          console.log(_this.iconList);
+        }else{
+          console.log(listdata.ret);
+        }
       })
     }
   }
