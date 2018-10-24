@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <swiper :options="swiperOption">
-            <!--加if的原因是初始传来的是空数组，会导致轮播图顺序变乱，等传过来后才显示这才不会乱 -->
+            <!--加if的原因是初始传来的是空数组，会导致轮播图顺序变乱，让完整的数组等传过来后才创建swiper这才不会乱 -->
             <swiper-slide  v-for='item of SwiperList' :key="item.id" v-if="SwiperList.length">
                 <img class="swiper-img" :src="item.url">
             </swiper-slide>
