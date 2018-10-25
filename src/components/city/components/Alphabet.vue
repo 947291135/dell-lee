@@ -1,19 +1,48 @@
 <template>
     <ul class="list">
-       <li class="item" v-for="(item,key) of cities" :key="key" @click="handleLetterClick">{{key}}</li>
+       <li class="item" v-for="(item,index) of letters" :ref="item" :key="index" @click="handleLetterClick" @touchstart="handletouchstart" @touchmove="handletouchmove" @touchend="handletouchend">{{item}}</li>
     </ul>
 </template>
 
 <script>
 export default {
     name:'CityAlphabet',
+    data () {
+        return {
+            touch:false
+        }
+    },
+    computed: {
+        letters() {
+            const letters =[];
+            for (let i in this.cities){
+                letters.push(i);
+            }
+            return letters;
+        }
+    },
     props: {
         cities: Object
     },
     methods: {
         handleLetterClick:function(e){
             this.$emit('change',e.target.innerText)
-        }
+        },
+        handletouchstart:function(){
+            this.touch = true;
+        },
+        handletouchmove:function(e){
+            if(this.touch){
+                const first = this.$refs['A'][0].offsetTop;
+                const last = e.touches[0].clientY-79;
+                // e.touches是获取当前点击元素的手指的一些信息
+                const index =Math.floor((last-first)/20);
+                this.$emit('change',this.letters[index]);
+            }
+        },
+        handletouchend:function(){
+            this.touch = false;
+        },
     }
 }
 </script>
