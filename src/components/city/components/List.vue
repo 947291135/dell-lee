@@ -7,99 +7,21 @@
                     <div class="button-wrapper">
                         <div class="button">北京</div> 
                     </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div> 
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div> 
-                    </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                        <div class="button">北京</div> 
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div> 
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div> 
+                    <div class="button-wrapper" v-for="item of hot" :key="item.id">
+                        <div class="button">{{item.name}}</div> 
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
+            <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
+                <div class="title border-topbottom">{{key}}</div>
+                <div class="item-list" v-for="InnerItem of item" :key="InnerItem.id">
                     <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
-                    </div>
-                    <div class="item border-bottom">
-                        阿拉尔
+                        {{InnerItem.name}}
                     </div>
                 </div>
             </div>
@@ -111,8 +33,23 @@
 import BScroll from 'better-scroll'
 export default {
     name:'CityList',
+    props: {
+        hot: Array,
+        cities: Object,
+        letter: String
+    },
     mounted () {
-        let scroll = new BScroll(this.$refs.wrapper)
+        //定义this这样全局用this 可以获取到scroll的实例，来使用实例的API
+        this.scroll = new BScroll(this.$refs.wrapper);
+    },
+    watch: {
+        letter:function(){
+            if(this.letter){
+                // 获取循环遍历出来的DOM，是数组形式，所以要在后面赋值下标
+                const element =this.$refs[this.letter][0];
+                this.scroll.scrollToElement(element,500)
+            }
+        }
     }
 }
 </script>
