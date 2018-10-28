@@ -5,7 +5,7 @@
         </div>
         <div class="search-content" ref="search" v-show="keyword">
             <ul>
-                <li class="search-item border-bottom" v-for="item of list" :key="item.id">{{item.name}}</li>
+                <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleClick(item.name)">{{item.name}}</li>
                 <li class="search-item border-bottom" v-show="!list.length">没有找到匹配数据</li>
             </ul>
         </div>
@@ -51,6 +51,12 @@ export default {
     },
     mounted () {
         this.scroll =new Bscroll(this.$refs.search)
+    },
+    methods: {
+        handleClick:function(city){
+            this.$store.dispatch('handleClick',city);
+            this.$router.push("/")
+        }
     }
     
 }
