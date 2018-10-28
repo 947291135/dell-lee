@@ -9,7 +9,8 @@ export default {
     name:'CityAlphabet',
     data () {
         return {
-            touch:false
+            touch:false,
+            timer:null
         }
     },
     computed: {
@@ -33,11 +34,18 @@ export default {
         },
         handletouchmove:function(e){
             if(this.touch){
-                const first = this.$refs['A'][0].offsetTop;
-                const last = e.touches[0].clientY-79;
-                // e.touches是获取当前点击元素的手指的一些信息
-                const index =Math.floor((last-first)/20);
-                this.$emit('change',this.letters[index]);
+                if(this.timer){
+                    clearTimeout(this.timer);
+                }
+                this.timer=setTimeout(()=>{
+                     const first = this.$refs['A'][0].offsetTop;
+                    const last = e.touches[0].clientY-79;
+                    // e.touches是获取当前点击元素的手指的一些信息
+                    const index =Math.floor((last-first)/20);
+                    if(index>=0 && index<this.letters.length){
+                        this.$emit('change',this.letters[index]);
+                    }
+                },16)
             }
         },
         handletouchend:function(){

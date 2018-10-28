@@ -1,9 +1,9 @@
 <template>
     <div>
         <CityHeader></CityHeader>
-        <CitySearch></CitySearch>
+        <CitySearch :cities='cities'></CitySearch>
         <CityList :cities="cities" :hot="hotCities" :letter='letter'></CityList>
-        <CityAlphabet :cities="cities" @change="handleLetterChange"></CityAlphabet>
+        <CityAlphabet :cities="cities" @change="handleLetterChange" ></CityAlphabet>
     </div>
 </template>
 
@@ -19,8 +19,7 @@ export default {
         CityHeader,
         CitySearch,
         CityList,
-        CityAlphabet,
-        
+        CityAlphabet
     },
     data () {
         return {

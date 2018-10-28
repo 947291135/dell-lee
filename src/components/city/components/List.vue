@@ -19,7 +19,7 @@
             </div>
             <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
                 <div class="title border-topbottom">{{key}}</div>
-                <div class="item-list" v-for="InnerItem of item" :key="InnerItem.id">
+                <div class="item-list" v-for="InnerItem of item" :key="InnerItem.id" :ref="InnerItem.name">
                     <div class="item border-bottom">
                         {{InnerItem.name}}
                     </div>
@@ -36,7 +36,7 @@ export default {
     props: {
         hot: Array,
         cities: Object,
-        letter: String
+        letter: String,
     },
     mounted () {
         //定义this这样全局用this 可以获取到scroll的实例，来使用实例的API
