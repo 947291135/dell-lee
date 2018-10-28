@@ -4,7 +4,7 @@
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>123</div>
-    <router-link to='/city'><div class="header-right">{{this.city}}<span class="iconfont arrow-icon">&#xe64a;</span></div></router-link>
+    <router-link to='/city'><div class="header-right">{{this.$store.state.city}}<span class="iconfont arrow-icon">&#xe64a;</span></div></router-link>
   </div>
 </template>
 
@@ -12,9 +12,6 @@
 
 export default {
   name: 'Homeheader',
-  props: {
-    "city":String
-  }
 }
 </script>
 <!-- 样式使用stylus，必须增加lang="stylus" -->
