@@ -40,7 +40,9 @@ export default {
     },
     mounted () {
         //定义this这样全局用this 可以获取到scroll的实例，来使用实例的API
-        this.scroll = new BScroll(this.$refs.wrapper);
+        this.scroll = new BScroll(this.$refs.wrapper,{
+            click: true
+        });
     },
     watch: {
         letter:function(){
@@ -53,7 +55,7 @@ export default {
     },
     methods: {
         handleClick (city) {
-            this.$store.dispatch('handleClick',city);
+            this.$store.commit('handleClick',city);
             this.$router.push("/");
         }
     }

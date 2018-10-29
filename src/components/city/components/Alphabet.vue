@@ -38,7 +38,7 @@ export default {
                     clearTimeout(this.timer);
                 }
                 this.timer=setTimeout(()=>{
-                     const first = this.$refs['A'][0].offsetTop;
+                    const first = this.$refs['A'][0].offsetTop;
                     const last = e.touches[0].clientY-79;
                     // e.touches是获取当前点击元素的手指的一些信息
                     const index =Math.floor((last-first)/20);

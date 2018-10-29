@@ -50,11 +50,13 @@ export default {
         }
     },
     mounted () {
-        this.scroll =new Bscroll(this.$refs.search)
+        this.scroll =new Bscroll(this.$refs.search,{
+            click: true
+        })
     },
     methods: {
         handleClick:function(city){
-            this.$store.dispatch('handleClick',city);
+            this.$store.commit('handleClick',city);
             this.$router.push("/")
         }
     }
