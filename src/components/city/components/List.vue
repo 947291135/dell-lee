@@ -5,21 +5,21 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{this.$store.state.city}}</div> 
+                        <div class="button">{{this.currentCity}}</div> 
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleClick(item.name)">
+                    <div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
                         <div class="button">{{item.name}}</div> 
                     </div>
                 </div>
             </div>
             <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
                 <div class="title border-topbottom">{{key}}</div>
-                <div class="item-list" v-for="InnerItem of item" :key="InnerItem.id" :ref="InnerItem.name" @click="handleClick(InnerItem.name)">
+                <div class="item-list" v-for="InnerItem of item" :key="InnerItem.id" :ref="InnerItem.name" @click="handleCityClick(InnerItem.name)">
                     <div class="item border-bottom">
                         {{InnerItem.name}}
                     </div>
@@ -31,6 +31,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name:'CityList',
     props: {
@@ -54,10 +55,16 @@ export default {
         }
     },
     methods: {
-        handleClick (city) {
-            this.$store.commit('handleClick',city);
+        handleCityClick (city) {
+            this.handleClick(city);
             this.$router.push("/");
-        }
+        },
+        ...mapMutations(['handleClick'])
+    },
+    computed: {
+        ...mapState({
+            currentCity: 'city'
+        })
     }
 }
 </script>

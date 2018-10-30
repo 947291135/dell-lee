@@ -21,10 +21,12 @@ import HomeList from './Header/list.vue'
 import HomeRecommend from './content/Recommend.vue'
 import HomeWeekend from './content/Weekend.vue'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   data () {
     return {
+      lastCity:'',
       SwiperList:[],
       iconList:[],
       rmList:[],
@@ -45,6 +47,7 @@ export default {
   // mounted:vue生命周期
   mounted () {
     // 等页面挂在好才去执行getHomeinfo事件
+    this.lastCity =this.city;
     this.getHomeinfo()
   },
   methods: {
@@ -57,7 +60,7 @@ export default {
       // 如果按照上面请求路径这样写，是模拟本地接口地址，假如代码上线，则需要修改成线上的接口地址，
       // 这样大批量的修改会有风险，可以利用webpack的转发配置将请求转发到配置路径下。
       // 在config目录下的index.js文件下，有个proxyTable的属性进行配置
-      axios.get('/api/index.json').then(function(response){
+      axios.get('/api/index.json?city='+this.city).then(function(response){
         var listdata = response.data;
         if(response.data && listdata.ret){
           _this.SwiperList = listdata.data.SwiperList;
@@ -70,7 +73,17 @@ export default {
         }
       })
     }
+  },
+  computed: {
+    ...mapState(['city'])
+  },
+  activated (){
+    if(this.lastCity !== this.city){ //如果上一次查找的城市和现在查找的城市不同
+      this.lastCity ==this.city; //重置最后一次查找的城市
+      this.getHomeinfo(); //执行查询
+    }
   }
+
 }
 </script>
 
