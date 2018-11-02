@@ -27,7 +27,6 @@ export default {
             if(scrollTop > 50){
                 let optcity = scrollTop / 140;
                 optcity = optcity>1?1:optcity
-                console.log(optcity); 
                 this.optcityStyle ={
                     'opacity' : optcity
                 }
