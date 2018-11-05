@@ -2,8 +2,8 @@
     <div class="wrapper">
         <swiper :options="swiperOption">
             <!--加if的原因是初始传来的是空数组，会导致轮播图顺序变乱，让完整的数组等传过来后才创建swiper这才不会乱 -->
-            <swiper-slide  v-for='item of SwiperList' :key="item.id" v-if="SwiperList.length">
-                <img class="swiper-img" :src="item.url">
+            <swiper-slide  v-for='item of SwiperList' :key="item.product" v-if="SwiperList.length">
+                <img class="swiper-img" :src="item.imgurl" :alt="item.imgtitle">
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>

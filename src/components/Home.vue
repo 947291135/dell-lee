@@ -6,7 +6,7 @@
     <HomeGPS></HomeGPS>
     <HomeADV></HomeADV>
     <HomeList :rmList="rmList"></HomeList>
-    <HomeRecommend :RecomList="RecomList"></HomeRecommend>
+    <HomeRecommend :RecomList="rmList"></HomeRecommend>
     <HomeWeekend :WeekList="WeekList"></HomeWeekend>
   </div>
 </template>
@@ -22,6 +22,10 @@ import HomeRecommend from './content/Recommend.vue'
 import HomeWeekend from './content/Weekend.vue'
 import axios from 'axios'
 import { mapState } from 'vuex'
+
+import qs from 'qs'
+
+
 export default {
   name: 'Home',
   data () {
@@ -63,13 +67,30 @@ export default {
       axios.get('/api/index.json?city='+this.city).then(function(response){
         var listdata = response.data;
         if(response.data && listdata.ret){
-          _this.SwiperList = listdata.data.SwiperList;
           _this.iconList = listdata.data.iconList;
           _this.rmList = listdata.data.rmList;
           _this.RecomList = listdata.data.RecomList;
           _this.WeekList = listdata.data.WeekList;
         }else{
           console.log(listdata.ret);
+        }
+      })
+
+      var datas = qs.stringify({
+        city:this.city
+      })
+
+      axios({
+        method: 'post',
+        url: 'http://api.mgblog.cn/qunaer/', //请求转发路径
+        data:datas, //传参
+      }).then(function(response){
+        var listdata = response.data;
+        if(response.data && listdata.ret){
+          _this.SwiperList=listdata.data.SwiperList;
+          _this.rmList = listdata.data.rmList;
+        }else{
+          console.log(listdata.erro);
         }
       })
     }

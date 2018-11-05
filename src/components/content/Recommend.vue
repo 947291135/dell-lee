@@ -5,11 +5,11 @@
             <span class="title-text">热销推荐</span>
         </div>
         <ul>
-            <router-link tag='li' class="item border-bottom" v-for="data of RecomList" :key="data.id" v-if="RecomList.length"  :to="'/detail/'+data.id">
-                <img class="item-img" :src="data.imgsrc" alt=""/>
+            <router-link tag='li' class="item border-bottom" v-for="data of RecomList" :key="data.id" v-if="RecomList.length"  :to="'/detail/'+data.product">
+                <img class="item-img" :src="data.imgurl" :alt="data.imgtitle"/>
                 <div class="item-info">
-                    <p class="item-title">{{data.title}}</p>
-                    <p class="item-desc">{{data.imginfor}}</p>
+                    <p class="item-title">{{data.imgtitle}}</p>
+                    <p class="item-desc">{{data.information}}</p>
                     <button class="item-button">查看详情</button>
                 </div>
             </router-link>

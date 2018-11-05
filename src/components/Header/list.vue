@@ -6,12 +6,12 @@
         </div>
         <div class="list_bottom">
             <ul class="list_ul">
-                <li class="mp-hotsale-item" v-for="data of rmList" :key="data.index" v-if="rmList.length">
+                <li class="mp-hotsale-item" v-for="data of rmList" :key="data.product" v-if="rmList.length">
                     <a class="mp-fulllink">
                         <div class="mp-hotsale-imgcon">
-                            <img :src="data.imgurl" :alt="data.title">
+                            <img :src="data.imgurl" :alt="data.imgtitle">
                         </div>
-                        <div class="mp-hotsale-sight">{{data.title}}</div>
+                        <div class="mp-hotsale-sight">{{data.imgtitle}}</div>
                         <div class="mp-hotsale-price">
                             <span class="mpg-price">￥<em class="mpg-price-num">{{data.price}}</em></span>
                             起
