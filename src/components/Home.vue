@@ -34,7 +34,6 @@ export default {
       SwiperList:[],
       iconList:[],
       rmList:[],
-      RecomList:[],
       WeekList:[]
     }
   },
@@ -64,17 +63,17 @@ export default {
       // 如果按照上面请求路径这样写，是模拟本地接口地址，假如代码上线，则需要修改成线上的接口地址，
       // 这样大批量的修改会有风险，可以利用webpack的转发配置将请求转发到配置路径下。
       // 在config目录下的index.js文件下，有个proxyTable的属性进行配置
-      axios.get('/api/index.json?city='+this.city).then(function(response){
-        var listdata = response.data;
-        if(response.data && listdata.ret){
-          _this.iconList = listdata.data.iconList;
-          _this.rmList = listdata.data.rmList;
-          _this.RecomList = listdata.data.RecomList;
-          _this.WeekList = listdata.data.WeekList;
-        }else{
-          console.log(listdata.ret);
-        }
-      })
+      // axios.get('/api/index.json?city='+this.city).then(function(response){
+      //   var listdata = response.data;
+      //   if(response.data && listdata.ret){
+      //     _this.SwiperList=listdata.data.SwiperList;
+      //     _this.rmList = listdata.data.rmList;
+      //     _this.WeekList = listdata.data.WeekList;
+      //     _this.iconList = listdata.data.iconList;
+      //   }else{
+      //     alert("服务器链接错误，请查看接口返回："+listdata.ret);
+      //   }
+      // })
 
       var datas = qs.stringify({
         city:this.city
@@ -89,8 +88,10 @@ export default {
         if(response.data && listdata.ret){
           _this.SwiperList=listdata.data.SwiperList;
           _this.rmList = listdata.data.rmList;
+          _this.WeekList = listdata.data.WeekList;
+          _this.iconList = listdata.data.iconList;
         }else{
-          console.log(listdata.erro);
+           alert("服务器链接错误，请查看接口返回："+listdata.ret);
         }
       })
     }

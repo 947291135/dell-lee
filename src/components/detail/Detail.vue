@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div class="body">
         <DetailBanner></DetailBanner>
         <DetailHeader></DetailHeader>
-        <DetailList :dtaillist='list'></DetailList>
+        <DetailInfor></DetailInfor>
+        <DetailPrice></DetailPrice>
         <div class="conter"></div>
     </div>
 </template>
@@ -11,42 +12,28 @@
 import DetailBanner from './components/DetailBanner.vue'
 import DetailHeader from './components/DetailHeader.vue'
 import DetailList from  './components/DetailList.vue'
+import DetailInfor from  './components/DetailInfor.vue'
+import DetailPrice from  './components/DetailPrice.vue'
 export default {
     name:'Detail',
     components: {
         DetailBanner,
         DetailHeader,
-        DetailList
+        DetailList,
+        DetailInfor,
+        DetailPrice
     },
     data () {
         return {
-            list:[{
-                title:'成人票',
-                children:[{
-                    title:'成人三馆联票'
-                },{
-                    title:'成人五馆联票'
-                },
-                ]
-            },{
-                title:'学生票',
-                children:[{
-                    title:'学生三馆联票'
-                }]
-            },{
-                title:'儿童票',
-                children:[{
-                    title:'儿童三馆联票'
-                }]
-            },{
-                title:'特惠票'
-            }]
+            
         }
     }
 }
 </script>
 
 <style lang="stylus" scoped>
+    .body
+        background #f5f5f5;
     .conter
      height 50rem
 </style>

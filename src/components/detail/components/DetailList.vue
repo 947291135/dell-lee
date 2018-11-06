@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- 递归组件的使用 -->
         <div class="item" v-for="(item,index) of dtaillist" :key="index">
             <div class="item-title border-bottom">
                 <span class="item-title-icon"></span>
@@ -19,6 +20,31 @@ export default {
     name:'DetailList',
     props: {
         dtaillist: Array
+    },
+    data () {
+        return {
+            list:[{
+                title:'成人票',
+                children:[{
+                    title:'成人三馆联票'
+                },{
+                    title:'成人五馆联票'
+                },
+                ]
+            },{
+                title:'学生票',
+                children:[{
+                    title:'学生三馆联票'
+                }]
+            },{
+                title:'儿童票',
+                children:[{
+                    title:'儿童三馆联票'
+                }]
+            },{
+                title:'特惠票'
+            }]
+        }
     }
 }
 </script>

@@ -4,13 +4,13 @@
             <span class="title-text">周末去那</span>
         </div>
         <ul>
-            <li class="item border-bottom" v-for="data of WeekList" :key="data.id" v-if="WeekList.length">
+            <li class="item border-bottom" v-for="data of WeekList" :key="data.product" v-if="WeekList.length">
                 <div class="item-img-wrapper">
-                    <img class="item-img" :src="data.imgsrc" :alt="data.title"/>
+                    <img class="item-img" :src="data.imgurl" :alt="data.title"/>
                 </div>
                 <div class="item-info">
                     <p class="item-title">{{data.title}}</p>
-                    <p class="item-desc">{{data.imginfor}}</p>
+                    <p class="item-desc">{{data.information}}</p>
                 </div>
             </li>
         </ul>
@@ -35,11 +35,10 @@ export default {
         position: relative;
         background #f5f5f5
         .title-text
-            display: inline-block;
-            color: #212121;
-            font-size: .32rem;
-            line-height: .8rem
+            height: .8rem;
             padding-left: .26rem;
+            line-height: .8rem;
+            color: #212121;
     .item
         background #fff
     .item-img-wrapper
@@ -49,14 +48,17 @@ export default {
     .item-img
         width 100%
     .item-info
-        padding .1rem
+        padding: .14rem .2rem .2rem .2rem;
         .item-title
             color: #212121;
             line-height: .48rem;
             font-size: .28rem;
             ellipsis()
         .item-desc
-            line-height .4rem
-            color #ccc
+            overflow: hidden;
+            padding-right: 1.4rem;
+            color: #616161;
+            font-size: .24rem;
+            line-height: .42rem;
             ellipsis()
 </style>
