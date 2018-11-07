@@ -4,11 +4,12 @@
             <span class="icon_logo"></span><div class="price_header border-bottom">门票</div>
         </div>
         <div class="price_content">
-            <div class="price_item">
+            <div class="price_item border-bottom">
                 <span class="mp-ellipsis">成人单人票</span>
                 <div class="mp-price">
                     ¥
                     <em class="mp-price-num">69</em>
+                    <span class="iconfont" style=" color: #9e9e9e;">&#xe64b;</span>
                 </div>
             </div>
         </div>

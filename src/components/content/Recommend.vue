@@ -1,6 +1,6 @@
 <template>
     <div class="Recom">
-        <div class="title">
+        <div class="title border-bottom">
             <img class="title-img" src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="你喜欢的">
             <span class="title-text">热销推荐</span>
         </div>
