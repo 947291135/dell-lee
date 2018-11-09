@@ -1,9 +1,9 @@
 <template>
     <div class="body">
-        <DetailBanner></DetailBanner>
+        <DetailBanner :imgurl='imgurl' :title="title"></DetailBanner>
         <DetailHeader></DetailHeader>
-        <DetailInfor></DetailInfor>
-        <DetailPrice></DetailPrice>
+        <DetailInfor :level='level' :address='address'></DetailInfor>
+        <DetailPrice :ticket='ticket'></DetailPrice>
         <DeteilComment></DeteilComment>
         <HomeRecommend :RecomList="rmList"></HomeRecommend>
     </div>
@@ -32,7 +32,12 @@ export default {
     },
     data () {
         return {
-            rmList:[]
+            rmList:[],
+            imgurl:'',
+            title:'',
+            level:'',
+            address:'',
+            ticket:''
         }
     },
     methods: {
@@ -54,10 +59,33 @@ export default {
                     alert("服务器链接错误，请查看接口返回："+listdata.ret);
                 }
             })
+        },
+        getPageinfo:function(){
+            var _this =this;
+            var datas = qs.stringify({
+                product:this.$route.params.id
+            })
+
+            axios({
+                method: 'post',
+                url: 'http://api.mgblog.cn/qunaer/select.php', //请求转发路径
+                data:datas, //传参
+            }).then(function(response){
+                var listdata = response.data;
+                _this.imgurl =  listdata.imgurl;
+                _this.title = listdata.title; 
+                _this.level = listdata.level; 
+                _this.address =  listdata.address;
+                _this.ticket = listdata.ticket;
+            })
         }
     },
     activated (){
         this.getHomeinfo();
+        this.getPageinfo();
+    },
+    deactivated(){
+        this.imgurl='';
     }
 }
 </script>

@@ -101,7 +101,7 @@ export default {
   },
   activated (){
     if(this.lastCity !== this.city){ //如果上一次查找的城市和现在查找的城市不同
-      this.lastCity ==this.city; //重置最后一次查找的城市
+      this.lastCity =this.city; //重置最后一次查找的城市
       this.getHomeinfo(); //执行查询
     }
   }

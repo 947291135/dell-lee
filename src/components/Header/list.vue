@@ -6,7 +6,7 @@
         </div>
         <div class="list_bottom">
             <ul class="list_ul">
-                <li class="mp-hotsale-item" v-for="data of rmList" :key="data.product" v-if="rmList.length">
+                <router-link tag='li' :to="'/detail/'+data.product" class="mp-hotsale-item" v-for="data of rmList" :key="data.product" v-if="rmList.length">
                     <a class="mp-fulllink">
                         <div class="mp-hotsale-imgcon">
                             <img :src="data.imgurl" :alt="data.imgtitle">
@@ -17,7 +17,7 @@
                             起
                         </div>
                     </a>
-                </li>
+                </router-link>
             </ul>
         </div>
     </div>

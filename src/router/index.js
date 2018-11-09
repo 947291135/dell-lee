@@ -21,7 +21,10 @@ export default new Router({
     {
       path: '/city',
       name: 'city',
-      component: City
+      component: City,
+      meta: {
+        keepAlive: true
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

@@ -3,7 +3,7 @@
         <div class="information_top border-bottom">
             <div class="information_top_item border-right">
                 <div class="orange">
-                    <span class="mp-commentcard-score">4.9</span>
+                    <span class="mp-commentcard-score">{{level}}</span>
                     <span class="mp-commentcard-text">分</span>
                     <span class="mp-commentcard-desc">很棒</span>
                 </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="information_bottom">
             <span class="iconfont gpsicon">&#xe631;</span>
-            广东省深圳市南山区欢乐海岸内
+            {{address}}
             <span class="iconfont icon_right">&#xe64b;</span>
         </div>
     </div>
@@ -34,6 +34,10 @@
 <script>
 export default {
     name:'DetailInfor',
+    props: {
+        level:String,
+        address:String
+    }
 }
 </script>
 

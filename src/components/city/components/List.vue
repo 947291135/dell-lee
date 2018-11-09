@@ -44,13 +44,15 @@ export default {
         this.scroll = new BScroll(this.$refs.wrapper,{
             click: true
         });
+        this.scroll.refresh();
     },
     watch: {
         letter:function(){
             if(this.letter){
+                this.scroll.refresh();
                 // 获取循环遍历出来的DOM，是数组形式，所以要在后面赋值下标
                 const element =this.$refs[this.letter][0];
-                this.scroll.scrollToElement(element,500)
+                this.scroll.scrollToElement(element,500);
             }
         }
     },
@@ -65,6 +67,12 @@ export default {
         ...mapState({
             currentCity: 'city'
         })
+    },
+    deactived (){
+        this.$refs.wrapper && this.$refs.wrapper.destroyed();
+    },
+    activated (){
+        this.scroll.refresh();
     }
 }
 </script>

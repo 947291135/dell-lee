@@ -37,6 +37,7 @@ export default {
                     const data =res.data;
                     _this.cities =data.cities;
                     _this.hotCities=data.hotCities;
+                    
                 }
             })
         },
@@ -45,8 +46,9 @@ export default {
         }
     },
     mounted () {
-        this.getCityInfo()
+        this.getCityInfo()//获取城市数据事件：get city
     }
+
 }
 </script>
 

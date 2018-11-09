@@ -8,7 +8,7 @@
                 <span class="mp-ellipsis">成人单人票</span>
                 <div class="mp-price">
                     ¥
-                    <em class="mp-price-num">69</em>
+                    <em class="mp-price-num">{{ticket}}</em>
                     <span class="iconfont" style=" color: #9e9e9e;">&#xe64b;</span>
                 </div>
             </div>
@@ -18,7 +18,10 @@
 
 <script>
 export default {
-    name:'DetailPrice'
+    name:'DetailPrice',
+    props: {
+        ticket:String
+    }
 }
 </script>
 

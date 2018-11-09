@@ -1,13 +1,15 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1810/4c/4c3e7f52ffd973b0a3.water.jpg_600x330_487dd289.jpg" alt="" srcset="">
+            <img class="banner-img" :src="imgurl">
             <div class="banner-info">
-                <div class="banner-title">世界之窗(AAAAA景区)</div>
+                <div class="banner-title">{{title}}</div>
             </div>
-            <div class="banner-number"><span class="iconfont">&#xe616;</span>39</div>
+            <div class="banner-number"><span class="iconfont">&#xe616;</span>3</div>
         </div>
-        <CommonGallary :imgs='imgs' v-show='showGallary' @close="handleBannerClickClose"></CommonGallary>
+        <transition>
+            <CommonGallary :imgs='imgs' v-show='showGallary' @close="handleBannerClickClose"></CommonGallary>
+        </transition>
     </div>   
 </template>
 
@@ -15,6 +17,10 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
     name:'DetailBanner',
+    props: {
+        imgurl:String,
+        title:String
+    },
     components: {
         CommonGallary
     },
@@ -40,6 +46,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+    .v-enter,.v-leave-to
+        opacity: 0;
+    .v-enter-active,.v-leave-active
+        transition: all .5s;
     .banner
         position relative
         overflow hidden
