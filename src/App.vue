@@ -3,6 +3,7 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <!-- 添加缓存 -->
   </div>
 </template>
 
