@@ -19,6 +19,14 @@ module.exports = {
           // 将路径替换：一旦请求是以api开头的，就将路径请求转到/static/json文件目录下
         }
       },
+      '/city': {// 当我们请求api这个目录的时候
+        target: 'http://api.mgblog.cn:80', // 将请求转发到http://localhost:8080这个服务器上
+        changeOrigin: true,
+        pathRewrite: {// 路径替换
+          '^/city': '/qunaer'
+          // 将路径替换：一旦请求是以api开头的，就将路径请求转到/static/json文件目录下
+        }
+      },
       '/abc': {
         target: 'http://api.mgblog.cn:80',
         changeOrigin: true,

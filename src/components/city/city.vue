@@ -31,7 +31,7 @@ export default {
     methods: {
         getCityInfo:function(){
             let _this = this;
-            axios.get('/api/city.json').then(function(res){
+            axios.get('http://api.mgblog.cn/qunaer/city.php').then(function(res){
                 res = res.data;
                 if(res.ret && res.data){
                     const data =res.data;
