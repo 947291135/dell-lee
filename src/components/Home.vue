@@ -25,16 +25,15 @@ import { mapState } from 'vuex'
 
 import qs from 'qs'
 
-
 export default {
   name: 'Home',
   data () {
     return {
-      lastCity:'',
-      SwiperList:[],
-      iconList:[],
-      rmList:[],
-      WeekList:[]
+      lastCity: '',
+      SwiperList: [],
+      iconList: [],
+      rmList: [],
+      WeekList: []
     }
   },
   components: {
@@ -50,13 +49,13 @@ export default {
   // mounted:vue生命周期
   mounted () {
     // 等页面挂在好才去执行getHomeinfo事件
-    this.lastCity =this.city;
+    this.lastCity = this.city
     this.getHomeinfo()
   },
   methods: {
     getHomeinfo () {
-      var _this=this;
-      //只有static目录才能进行访问静态资源，其他目录访问会直接跳转回主页
+      var _this = this
+      // 只有static目录才能进行访问静态资源，其他目录访问会直接跳转回主页
       // axios.get('/static/json/index.json').then(function(response){
       //   console.log(response.data);
       // })
@@ -76,22 +75,22 @@ export default {
       // })
 
       var datas = qs.stringify({
-        city:this.city
+        city: this.city
       })
 
       axios({
         method: 'post',
-        url: 'http://api.mgblog.cn/qunaer/', //请求转发路径
-        data:datas, //传参
-      }).then(function(response){
-        var listdata = response.data;
-        if(response.data && listdata.ret){
-          _this.SwiperList=listdata.data.SwiperList;
-          _this.rmList = listdata.data.rmList;
-          _this.WeekList = listdata.data.WeekList;
-          _this.iconList = listdata.data.iconList;
-        }else{
-           alert("服务器链接错误，请查看接口返回："+listdata.ret);
+        url: 'http://api.mgblog.cn/qunaer/', // 请求转发路径
+        data: datas // 传参
+      }).then(function (response) {
+        var listdata = response.data
+        if (response.data && listdata.ret) {
+          _this.SwiperList = listdata.data.SwiperList
+          _this.rmList = listdata.data.rmList
+          _this.WeekList = listdata.data.WeekList
+          _this.iconList = listdata.data.iconList
+        } else {
+          alert('服务器链接错误，请查看接口返回：' + listdata.ret)
         }
       })
     }
@@ -99,10 +98,10 @@ export default {
   computed: {
     ...mapState(['city'])
   },
-  activated (){
-    if(this.lastCity !== this.city){ //如果上一次查找的城市和现在查找的城市不同
-      this.lastCity =this.city; //重置最后一次查找的城市
-      this.getHomeinfo(); //执行查询
+  activated () {
+    if (this.lastCity !== this.city) { // 如果上一次查找的城市和现在查找的城市不同
+      this.lastCity = this.city // 重置最后一次查找的城市
+      this.getHomeinfo() // 执行查询
     }
   }
 
@@ -114,4 +113,3 @@ export default {
   .main
     background #f5f5f5
 </style>
-
