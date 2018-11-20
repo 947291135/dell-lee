@@ -1,6 +1,6 @@
 # dell-lee
 
-> A Vue.js project
+> 这是去哪儿的vue 源码项目，与其他的不同，拥有线上api。
 
 ## Build Setup
 
@@ -17,5 +17,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
