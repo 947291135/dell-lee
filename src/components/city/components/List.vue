@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{this.currentCity}}</div> 
+                        <div class="button">{{this.currentCity}}</div>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
                     <div class="button-wrapper" v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
-                        <div class="button">{{item.name}}</div> 
+                        <div class="button">{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </template>
 
@@ -33,47 +33,60 @@
 import BScroll from 'better-scroll'
 import { mapState, mapMutations } from 'vuex'
 export default {
-    name:'CityList',
-    props: {
-        hot: Array,
-        cities: Object,
-        letter: String,
-    },
-    mounted () {
-        //定义this这样全局用this 可以获取到scroll的实例，来使用实例的API
-        this.scroll = new BScroll(this.$refs.wrapper,{
-            click: true
-        });
-        this.scroll.refresh();
-    },
-    watch: {
-        letter:function(){
-            if(this.letter){
-                this.scroll.refresh();
-                // 获取循环遍历出来的DOM，是数组形式，所以要在后面赋值下标
-                const element =this.$refs[this.letter][0];
-                this.scroll.scrollToElement(element,500);
-            }
-        }
-    },
-    methods: {
-        handleCityClick (city) {
-            this.handleClick(city);
-            this.$router.push("/");
-        },
-        ...mapMutations(['handleClick'])
-    },
-    computed: {
-        ...mapState({
-            currentCity: 'city'
-        })
-    },
-    deactived (){
-        this.$refs.wrapper && this.$refs.wrapper.destroyed();
-    },
-    activated (){
-        this.scroll.refresh();
+  name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object,
+    letter: String,
+    index: {
+      type: Number,
+      default () {
+        return 0
+      }
     }
+  },
+  mounted () {
+    // 定义this这样全局用this 可以获取到scroll的实例，来使用实例的API
+    console.log(this.hot, this.cities)
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      click: true
+    })
+    this.scroll.refresh()
+  },
+  watch: {
+    letter: function () {
+      if (this.letter) {
+        this.scroll.refresh()
+        // 获取循环遍历出来的DOM，是数组形式，所以要在后面赋值下标
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element, 500)
+      }
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.handleClick(city)
+      let index = this.index + 1
+      console.log(index)
+      if (index <= 6) {
+        this.$router.push({name: 'city', query: {index: index}})
+      } else {
+        this.$router.push({name: 'Home'})
+      }
+    },
+    ...mapMutations(['handleClick'])
+  },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
+  deactived () {
+    this.$refs.wrapper && this.$refs.wrapper.destroyed()
+  },
+  activated () {
+    this.scroll.refresh()
+  }
 }
 </script>
 
@@ -104,7 +117,7 @@ export default {
             padding .1rem .6rem .1rem .1rem
             overflow hidden
             .button-wrapper
-                float left 
+                float left
                 width 33.3%
                 .button
                     text-align center
@@ -116,7 +129,5 @@ export default {
             .item
                 line-height .64rem
                 padding-left .2rem
-
-
 
 </style>

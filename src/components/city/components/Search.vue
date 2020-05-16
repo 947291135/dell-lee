@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="search"> 
-            <input class="search-input" type="text" v-model="keyword"  placeholder="请输入城市名">
+        <div class="search">
+            <input class="search-input" type="text" v-model="keyword"  :placeholder="headerText">
         </div>
         <div class="search-content" ref="search" v-show="keyword">
             <ul>
@@ -10,59 +10,87 @@
             </ul>
         </div>
     </div>
-    
+
 </template>
 
 <script>
 import Bscroll from 'better-scroll'
-import { mapState,mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
-    name:'CitySearch',
-    props:{
-        cities: Object
-    },
-    data(){
-        return {
-            keyword:'',
-            list:[],
-            timer:null
-        }
-    },
-    watch:{
-        keyword() {
-             if(this.timer){
-                clearTimeout(this.timer);
-             }
-             if(!this.keyword){
-                 this.list=[];
-                 return;
-             }
-             this.timer=setTimeout(()=>{
-                 const result = [];
-                 for (const key in this.cities) {
-                     this.cities[key].forEach((value) => {
-                         if(value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1){
-                             result.push(value);
-                         }
-                     });
-                 }
-                 this.list = result;
-             },100)
-        }
-    },
-    mounted () {
-        this.scroll =new Bscroll(this.$refs.search,{
-            click: true
-        })
-    },
-    methods: {
-        handleCityClick:function(city){
-            this.handleClick(city);
-            this.$router.push("/")
-        },
-        ...mapMutations(['handleClick'])
+  name: 'CitySearch',
+  props: {
+    cities: Object,
+    index: {
+      type: Number,
+      default () {
+        return 0
+      }
     }
-    
+  },
+  data () {
+    return {
+      keyword: '',
+      list: [],
+      timer: null
+    }
+  },
+  watch: {
+    keyword () {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      if (!this.keyword) {
+        this.list = []
+        return
+      }
+      this.timer = setTimeout(() => {
+        const result = []
+        for (const key in this.cities) {
+          this.cities[key].forEach((value) => {
+            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+              result.push(value)
+            }
+          })
+        }
+        this.list = result
+      }, 100)
+    }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search, {
+      click: true
+    })
+  },
+  methods: {
+    handleCityClick: function (city) {
+      this.handleClick(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['handleClick'])
+  },
+  computed: {
+    headerText () {
+      switch (this.index) {
+        case 0:
+          return '请输入省级'
+        case 1:
+          return '请输入市级'
+        case 2:
+          return '请输入区级'
+        case 3:
+          return '请输入街道'
+        case 4:
+          return '请输入楼栋'
+        case 5:
+          return '请输入单元'
+        case 6:
+          return '请输入房间'
+        default:
+          return '请请输入'
+      }
+    }
+  }
+
 }
 </script>
 
